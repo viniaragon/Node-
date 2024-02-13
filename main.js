@@ -60,7 +60,7 @@ function redenrizar() {
   }
 
   const painel = document.createElement("div");
-  const cores = ["red", "green", "blue", "yellow"];
+  const cores = ["red", "green", "blue", "yellow", "purple"];
   const grafico = document.createElement("div");
   grafico.className = "grafico";
   painel.appendChild(grafico);
@@ -68,12 +68,12 @@ function redenrizar() {
     const coluna = document.createElement("div");
     coluna.className = "grafico-coluna";
     const cor = document.createElement("div");
-    cor.style.height = 120;
+    cor.style.height = `${mes.totalizador.saldo / 100}px`;
     cor.style.backgroundColor = cores.pop();
     coluna.appendChild(cor);
     const nomeDoMes = document.createElement("div");
+    nomeDoMes.className = "grafico-coluna-texto";
     nomeDoMes.innerText = mes.nome;
-    coluna.appendChild(cor);
     coluna.appendChild(nomeDoMes);
     grafico.appendChild(coluna);
   }
